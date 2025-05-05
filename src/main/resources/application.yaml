@@ -1,4 +1,19 @@
+server.port: 8081
+
 spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          external:
+            issuer-uri: http://localhost:8080/realms/engage-metrics
+        registration:
+          external:
+            provider: external
+            client-id: ${client-id}
+            client-secret: ${client-secret}
+            scope: openid, offline_access, profile
+            authorization-grant-type: authorization_code
   jpa:
     hibernate:
       ddl-auto: update
