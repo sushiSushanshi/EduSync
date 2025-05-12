@@ -9,11 +9,11 @@ import java.util.Date;
 @Entity
 public class Student {
     @Id
-    private String studentId;
+    private long studentId;
     private String firstName;
     private String lastName;
     private Date DOB;
-    private Enum gender;
+    //private Enum gender;
     private String phone;
     @OneToOne
     private Address address;
